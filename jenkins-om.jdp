@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('PULL') {
             steps {
-                git 'https://github.com/omkarambuskar612-source/om-jenkins.git'
+                git branch: 'main', url: 'https://github.com/omkarambuskar612-source/om-jenkins.git'
                 echo 'PULL SUCCESS'
             }
         }
