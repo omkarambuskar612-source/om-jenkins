@@ -1,34 +1,22 @@
-
 pipeline {
     agent any
-
     stages {
-
         stage('PULL') {
             steps {
-                git 'https://github.com/chetanraval07/jenkins2.0-B34.git'
+                git 'https://github.com/omkarambuskar612-source/om-jenkins.git'
                 echo 'PULL SUCCESS'
             }
         }
-
         stage('BUILD') {
             steps {
-                dir('backend') {
-                    sh 'java -version'
-                    sh 'mvn -version'
-                    sh 'mvn clean package -DskipTests'
-                }
-
                 echo 'BUILD SUCCESS'
             }
         }
-
         stage('TEST') {
             steps {
                 echo 'TEST SUCCESS'
             }
         }
-
         stage('DEPLOY') {
             steps {
                 echo 'DEPLOY SUCCESS'
