@@ -38,7 +38,7 @@ pipeline {
          
         stage('QUALITY-GATE') {
             steps {
-	        timeout(time: 5, unit: 'MINUTES') {
+	        timeout(time: 4, unit: 'MINUTES') {
 		waitForQualityGate abortPipeline: false, credentialsId: 'sonarqube-credential'
                 echo 'QUALITY-PASSED'
                 }
