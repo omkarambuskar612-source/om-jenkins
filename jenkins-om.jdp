@@ -47,8 +47,9 @@ pipeline {
 	    }    
         }
          
-        stage('DEPLOY') {
+        stage('Countinuous-dilevery') {
             steps {
+                sh 'aws s3 cp backend/target/student-registration-backend-0.0.1-SNAPSHOT.jar/s3://om-testing1/studentapp.jar'
                 echo 'DEPLOY SUCCESS'
             }
         }
